@@ -1,0 +1,48 @@
+{
+  "name": "grunt-shim-modules",
+  "version": "0.0.1",
+  "description": "Shim files as modules by template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/13rentgen/grunt-shim-modules.git"
+  },
+  "author": {
+    "name": "Alexandr Zaytcev",
+    "email": "13rentgen@gmail.com"
+  },
+  "keywords": [
+    "gruntplugin",
+    "grunt",
+    "shim",
+    "modules"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/13rentgen/grunt-shim-modules/blob/master/LICENSE-MIT"
+    }
+  ],
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
+    "grunt": "~0.4.2",
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "~0.3.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "contributors": [
+    {
+      "name": "Zaytcev Alexandr",
+      "email": "13rentgen@gmail.com",
+      "url": "https://github.com/13rentgen/"
+    }
+  ],
+  "readmeFilename": "README.md"
+}
