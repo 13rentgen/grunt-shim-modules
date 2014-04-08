@@ -2,13 +2,17 @@
   "name": "grunt-shim-modules",
   "version": "0.0.1",
   "description": "Shim files as modules by template",
+  "homepage": "https://github.com/13rentgen/grunt-shim-modules",
+  "author": {
+    "name": "Alexandr Zaytcev",
+    "email": "13rentgen@gmail.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/13rentgen/grunt-shim-modules.git"
   },
-  "author": {
-    "name": "Alexandr Zaytcev",
-    "email": "13rentgen@gmail.com"
+  "bugs": {
+    "url": "https://github.com/13rentgen/grunt-shim-modules/issues"
   },
   "keywords": [
     "gruntplugin",
