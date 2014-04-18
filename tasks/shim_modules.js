@@ -37,6 +37,16 @@ module.exports = function ( grunt ) {
                 return source;
             },
 
+            escapedSource = function( source ) {
+                var
+                    re = /[^\\](\\n)|[^\\](\\r)/g;
+                // end of vars
+
+                source.replace(re, '\\n', '\\r');
+
+                return source;
+            },
+
             getDependencies = function( dep ) {
                 var
                     str = '',
@@ -82,25 +92,28 @@ module.exports = function ( grunt ) {
             template = grunt.file.read(options.template);
         // end of vars
 
+        grunt.template.addDelimiters('square', '[%', '%]');
 
         // Iterate over all specified file groups.
         this.files.forEach(function ( file ) {
             var
                 src = getSource(file),
+                escapedSrc = escapedSource(src),
                 data,
                 newSource;
             // end of vars
 
+
             data = {
-                module_code: src,
+                module_code: escapedSrc,
                 module_name: file.module_name,
                 exports: file.exports || null,
                 desc: file.desc || null,
                 dependencies: getDependencies(file.dependencies || []),
-                import_dependencies: getImportDependencies(file.dependencies || [], options.importNonFirst || false)
+                import_dependencies: getImportDependencies(file.importDependencies || file.dependencies || [], options.importNonFirst || false)
             };
 
-            newSource = grunt.template.process(template, {data: data});
+            newSource = grunt.template.process(template, {delimiters: 'square', data: data});
 
             // Write the destination file.
             grunt.file.write(file.dest, newSource);

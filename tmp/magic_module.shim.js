@@ -1,13 +1,13 @@
 /**
  * @param    {Object}    window     Link to window
  * @param    {Object}    document   Link to document
- * @param    {Object}    modules    Link to models system
+ * @param    {Object}    define     Define module
  */
-(function ( window, document, modules ) {
+(function ( window, document, define ) {
     'use strict';
 
     var
-        moduleRealization = function( provide, a, b, c ) {
+        moduleRealization = function( a, b, c ) {
 
             /**
              * Module body
@@ -38,7 +38,7 @@
     }());
 // end of module
 
-            provide(magicModule)
+            return magicModule;
         };
     // end of module realization
 
@@ -47,12 +47,12 @@
      * 
      * @module      magicModule
      */
-    modules.define(
+    define(
         // Module name
         'magicModule',
 
         // Dependies
-        ['aModule', 'bModule', 'cModule'],
+        ['a', 'b', 'c'],
         
         // Module realization
         moduleRealization
@@ -61,5 +61,5 @@
 }(
     this,
     this.document,
-    this.modules
+    this.define
 ));

@@ -17,8 +17,7 @@ module.exports = function (grunt) {
         jshint: {
             all: [
                 'Gruntfile.js',
-                'tasks/*.js',
-                '<%= nodeunit.tests %>'
+                'tasks/*.js'
             ],
             options: {
                 jshintrc: '.jshintrc',
@@ -65,8 +64,23 @@ module.exports = function (grunt) {
                 module_name: 'magicModule',
                 desc: 'Module with magic realization',
                 exports: 'magicModule',
-                dependencies: ['a', 'b', 'c']
-            }
+                dependencies: ['aModule', 'bModule', 'cModule'],
+                importDependencies: ['a', 'b', 'c']
+            },
+
+            // Underscore has special character
+            underscore: {
+                options: {
+                    template: 'ymodules-module_template.tpl',
+                    importNonFirst: true
+                },
+
+                src: 'example_module/underscore.js',
+                dest: 'tmp/underscore.shim.js',
+                module_name: 'underscore',
+                desc: 'Underscore.js 1.6.0',
+                exports: '_'
+            },
         },
 
         // Unit tests.

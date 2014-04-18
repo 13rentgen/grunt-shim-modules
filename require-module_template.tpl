@@ -7,28 +7,28 @@
     'use strict';
 
     var
-        moduleRealization = function( <%= import_dependencies %> ) {
+        moduleRealization = function( [%= import_dependencies %] ) {
 
             /**
              * Module body
              */
-            <%= module_code %>
+            [%= module_code %]
 
-            return <%= exports %>;
+            return [%= exports %];
         };
     // end of module realization
 
     /**
-     * <%= desc %>
+     * [%= desc %]
      * 
-     * @module      <%= module_name %>
+     * @module      [%= module_name %]
      */
     define(
         // Module name
-        '<%= module_name %>',
+        '[%= module_name %]',
 
         // Dependies
-        [<%= dependencies %>],
+        [[%= dependencies %]],
         
         // Module realization
         moduleRealization
