@@ -1,4 +1,4 @@
-# grunt-shim-modules
+# grunt-shim-modules [![Build Status](https://travis-ci.org/13rentgen/grunt-shim-modules.svg?branch=master)](https://travis-ci.org/13rentgen/grunt-shim-modules)
 
 > Shim files as modules by template
 
